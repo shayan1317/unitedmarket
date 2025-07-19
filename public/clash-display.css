@@ -1,0 +1,37 @@
+@font-face {
+	font-family: 'Clash Display';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Clash Display'), url('./ClashDisplayRegular.woff') format('woff');
+}
+@font-face {
+	font-family: 'Clash Display';
+	font-style: normal;
+	font-weight: 200;
+	src: local('Clash Display'),
+		url('./ClashDisplayExtralight.woff') format('woff');
+}
+@font-face {
+	font-family: 'Clash Display';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Clash Display'), url('./ClashDisplayLight.woff') format('woff');
+}
+@font-face {
+	font-family: 'Clash Display';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Clash Display'), url('./ClashDisplayMedium.woff') format('woff');
+}
+@font-face {
+	font-family: 'Clash Display';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Clash Display'), url('./ClashDisplaySemibold.woff') format('woff');
+}
+@font-face {
+	font-family: 'Clash Display';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Clash Display'), url('./ClashDisplayBold.woff') format('woff');
+}

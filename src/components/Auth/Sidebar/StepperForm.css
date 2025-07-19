@@ -1,0 +1,18 @@
+.MuiStepConnector-line {
+  height: 3rem;
+}
+.MuiStepIcon-root {
+  color: #2ebb55 !important;
+}
+/* .MuiStepIcon-completed {
+  background-color: #2ebb55 !important;
+} */
+.MuiStepIcon-root.MuiStepIcon-active {
+  color: #2ebb55 !important;
+}
+.MuiStepLabel-iconContainer {
+  margin-right: 0.8rem;
+}
+.MuiStepIcon-text {
+  font-weight: bold;
+}
