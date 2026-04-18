@@ -365,7 +365,7 @@ function LoginForm(props) {
               </Text>
             )}
 
-            {activeStep === 0 && <ConnectWith />}
+            {activeStep === 0 && <ConnectWith isLogin={props.isLogin} />}
             {activeStep > 1 && (
               <Text
                 fontFamily="poppins"

@@ -1,8 +1,10 @@
 import React from "react";
 import { Box, Text, HStack, Image, Link } from "native-base";
 
-function ConnectWith() {
- 
+import { useNavigate } from "react-router-dom";
+
+function ConnectWith({ isLogin }) {
+  const navigate = useNavigate();
   return (
     <Box mt={10} textAlign="center">
       <Text
@@ -54,9 +56,10 @@ function ConnectWith() {
             color={"#1C1B1B"}
             textTransform={"capitalize"}
           >
-            already have an account
+            {isLogin ? "Don't have an account?" : "Already have an account?"}
           </Text>
           <Link
+            onPress={() => navigate(isLogin ? "/signup" : "/login")}
             _text={{
               color: "#2EBB55",
               fontWeight: "semibold",
@@ -64,7 +67,7 @@ function ConnectWith() {
             }}
             textTransform={"capitalize"}
           >
-            sign up
+            {isLogin ? "sign up" : "sign in"}
           </Link>
         </HStack>
       </Box>

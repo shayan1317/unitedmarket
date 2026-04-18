@@ -5,20 +5,37 @@ import Sidebar from "./Sidebar/Sidebar";
 import { createContext } from "react";
 import LoginForm from "./Form/LoginForm";
 import AccountType from "./Form/AccountType";
+import { useLocation } from "react-router-dom";
 
 export const userDetailsContext = createContext();
+
 function Form() {
+  const location = useLocation();
+  const isLogin = location.pathname === "/login";
   const [activeStep, setActiveStep] = React.useState(0);
   const [accountType, setAccountType] = useState("");
-  console.log("SASA", AccountType);
+
   return (
     <userDetailsContext.Provider
       value={[activeStep, setActiveStep, accountType, setAccountType]}
     >
       <Box h={"100vh"}>
         <HStack h={"100%"}>
-          <Sidebar />
-          {activeStep === 0 && (
+          <Sidebar isLogin={isLogin} />
+          {isLogin ? (
+            <LoginForm
+              title="Sign In to United Market"
+              subtitle="Enter your credentials to continue"
+              label="Email/Phone Number"
+              label2="Password"
+              btnText="Sign In"
+              type="email"
+              type2="password"
+              isLogin={true}
+            />
+          ) : (
+            <>
+              {activeStep === 0 && (
             <LoginForm
               title="Get Registered On United Market"
               subtitle="Enter your email address or phone number"
@@ -69,15 +86,17 @@ function Form() {
               type2="role "
             />
           )}
-          {activeStep >= 5 && (
-            <LoginForm
-              title="Review"
-              subtitle="Our team will review your application and reach out via email."
-              label="Label Name"
-              btnText="Schedule a Demo"
-              imgUrl="clock.svg"
-              type="otp"
-            />
+              {activeStep >= 5 && (
+                <LoginForm
+                  title="Review"
+                  subtitle="Our team will review your application and reach out via email."
+                  label="Label Name"
+                  btnText="Schedule a Demo"
+                  imgUrl="clock.svg"
+                  type="otp"
+                />
+              )}
+            </>
           )}
         </HStack>
       </Box>
