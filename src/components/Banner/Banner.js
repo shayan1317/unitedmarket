@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Container,
@@ -15,6 +15,7 @@ import {
 } from "native-base";
 
 function Banner() {
+  const navigate = useNavigate();
   var bannerImg = require("../../assets/banner/banner.png");
   return (
     <div id="home">
@@ -98,7 +99,7 @@ function Banner() {
 								</Text>
 							</Box> */}
               <Box marginBottom={4}>
-                <Link href="https://unitedmarket.typeform.com/to/OclKy2Mw">
+                <Link onPress={() => navigate("/signup")}>
                   <Button
                     color="#E3E3E3"
                     borderColor="#2EBA55"

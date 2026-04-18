@@ -44,7 +44,7 @@ function LoginForm(props) {
       if (graphQLErrors) {
         // setLoading(false);
         graphQLErrors.forEach(({ message }) => {
-          // eslint-disable-next-line no-console
+           
           Notification("error", message);
         });
       }
@@ -74,7 +74,7 @@ function LoginForm(props) {
       if (graphQLErrors) {
         // setLoading(false);
         graphQLErrors.forEach(({ message }) => {
-          // eslint-disable-next-line no-console
+           
           Notification("error", message);
         });
       }

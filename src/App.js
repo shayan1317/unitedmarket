@@ -1,32 +1,22 @@
 import "./App.css";
 import { NativeBaseProvider } from "native-base";
-import HeaderComp from "./components/Header/HeaderComp";
-import Banner from "./components/Banner/Banner";
-import Properties from "./components/Properties/Properties";
-import PlatformAnalysis from "./components/PlatformAnalysis/PlatformAnalysis";
-import Features from "./components/Features/Features";
-import GetNotified from "./components/Getnotified/GetNotified";
-import Footer from "./components/Footer/Footer";
-import Customers from "./components/Customers/Customers";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landingpage from "./Landingpage";
 import Form from "./components/Auth/Form";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+
 function App() {
   return (
     <NativeBaseProvider>
-  
-      {/* <ToastContainer></ToastContainer> */}
-      {/* <HeaderComp /> */}
-      {/* <div className="App">
-        <Banner />
-        <Properties />
-        <PlatformAnalysis />
-        <Features />
-        <Customers />
-        <GetNotified />
-
-        <Footer />
-      </div> */}
-      <Form />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Landingpage />} />
+          <Route path="/auth" element={<Form />} />
+          <Route path="/login" element={<Form />} />
+          <Route path="/signup" element={<Form />} />
+        </Routes>
+      </Router>
+      <ToastContainer />
     </NativeBaseProvider>
   );
 }

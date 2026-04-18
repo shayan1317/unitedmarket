@@ -2,7 +2,10 @@ import { Box, Button, Container, HStack, Link, Wrap } from 'native-base';
 import Title from '../Title/Title';
 import React from 'react';
 import Nbox from './NBox';
+import { useNavigate } from 'react-router-dom';
+
 function Features() {
+	const navigate = useNavigate();
 	const data = [
 		{
 			imgUrl: 'group1.svg',
@@ -124,7 +127,7 @@ function Features() {
 					</Box>
 
 					<Box w='100%' marginTop={20}>
-						<Link href='https://unitedmarket.typeform.com/to/OclKy2Mw'>
+						<Link onPress={() => navigate('/signup')}>
 							<Button
 								py={3}
 								w='350px'

@@ -15,10 +15,12 @@ import {
 	HamburgerIcon,
 } from 'native-base';
 import { Dimensions } from 'react-native-web';
+import { useNavigate } from 'react-router-dom';
 
 function HeaderComp() {
 	const scrollTo = useScrollTo();
 	const width = Dimensions.get('window').width;
+	const navigate = useNavigate();
 
 	return (
 		<Box backgroundColor='#1C1B1B' h='60px'>
@@ -107,7 +109,6 @@ function HeaderComp() {
 									</Button>
 								</Link>
 								<Link
-									href='https://www.yourstudionow.com'
 									textTransform='uppercase'
 									_text={{ color: '#E3E3E3', textDecoration: 'none' }}
 									marginX={5}
@@ -136,7 +137,6 @@ function HeaderComp() {
 									</Button>
 								</Link>
 								<Link
-									href='https://theumapp.com/blog/'
 									textTransform='uppercase'
 									_text={{ color: '#E3E3E3', textDecoration: 'none' }}
 									marginX={5}
@@ -168,7 +168,7 @@ function HeaderComp() {
 						</Box>
 						<Box flex={1}>
 							<Flex direction='row' justify='flex-end' alignItems={'center'}>
-								<Link href='https://unitedmarket.com/login'>
+								<Link onPress={() => navigate('/login')}>
 									<Button
 										justifyContent={'flex-start'}
 										borderColor='#2EBA55'
@@ -188,21 +188,12 @@ function HeaderComp() {
 												color: '#fff',
 											},
 										}}
-										// borderColor="#2EBA55"
-										// borderWidth="1px"
-										// background="none"
-										// _text={{
-										//   color: "#2EBA55",
-										// }}
-										// textTransform="capitalize"
-										// width="65px"
-										// h="35px"
 									>
 										Sign In
 									</Button>
 								</Link>
 
-								<Link href='https://unitedmarket.typeform.com/to/OclKy2Mw'>
+								<Link onPress={() => navigate('/signup')}>
 									<Button
 										justifyContent={'flex-start'}
 										borderColor='#2EBA55'
@@ -319,7 +310,6 @@ function HeaderComp() {
 								</Menu.Item>
 								<Menu.Item p={0} m={0} backgroundColor={'transparent'}>
 									<Link
-										href='https://www.yourstudionow.com'
 										textDecoration='none'
 										textTransform='uppercase'
 										_text={{ color: '#E3E3E3', textDecoration: 'none' }}
@@ -350,7 +340,6 @@ function HeaderComp() {
 								</Menu.Item>
 								<Menu.Item p={0} m={0} backgroundColor={'transparent'}>
 									<Link
-										href='https://theumapp.com/blog/'
 										textDecoration='none'
 										textTransform='uppercase'
 										_text={{ color: '#E3E3E3', textDecoration: 'none' }}
@@ -382,7 +371,7 @@ function HeaderComp() {
 								{/* </Link> */}
 
 								<Menu.Item backgroundColor={'transparent'}>
-									<Link href='https://unitedmarket.com/login'>
+									<Link onPress={() => navigate('/login')}>
 										<Button
 											justifyContent={'flex-start'}
 											borderColor='#2EBA55'
@@ -402,22 +391,13 @@ function HeaderComp() {
 													fontSize: { md: '16px', sm: '14px', base: '14px' },
 												},
 											}}
-											// borderColor="#2EBA55"
-											// borderWidth="1px"
-											// background="none"
-											// _text={{
-											//   color: "#2EBA55",
-											// }}
-											// textTransform="capitalize"
-											// width="65px"
-											// h="35px"
 										>
 											Sign In
 										</Button>
 									</Link>
 								</Menu.Item>
 								<Menu.Item backgroundColor={'transparent'}>
-									<Link href='https://unitedmarket.typeform.com/to/OclKy2Mw'>
+									<Link onPress={() => navigate('/signup')}>
 										<Button
 											justifyContent={'flex-start'}
 											borderColor='#2EBA55'
